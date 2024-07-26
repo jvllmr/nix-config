@@ -59,7 +59,7 @@
     spotify
     brave
     nextcloud-client
-    tabby
+
   ];
 
   # Enable home-manager and git
@@ -77,6 +77,8 @@
 
 
   };
+
+
 
   programs.chromium = {
     enable = true;
