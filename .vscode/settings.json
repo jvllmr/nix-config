@@ -1,0 +1,11 @@
+{
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
+
+  "editor.formatOnSave": true,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  }
+}
