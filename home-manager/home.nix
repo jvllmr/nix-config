@@ -128,7 +128,9 @@
       "workbench.colorTheme" = "Atom One Dark";
       "nix.serverPath" = "nixd";
       "nix.enableLanguageServer" = true;
-
+      git = {
+        confirmSync = false;
+      };
       "[nix]" = { "editor.defaultFormatter" = "jnoortheen.nix-ide"; };
       "[python]" = { "editor.defaultFormatter" = "charliermarsh.ruff"; };
     };
