@@ -88,8 +88,14 @@
   };
 
 
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
+
+
+  # time settings
+  time = {
+    hardwareClockInLocalTime = true;
+    timeZone = "Europe/Berlin";
+  };
+
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
