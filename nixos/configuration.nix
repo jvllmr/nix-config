@@ -136,6 +136,9 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  # intel
+  boot.kernelParams = [ "module_blacklist=i915" ];
+
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
