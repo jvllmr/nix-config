@@ -201,7 +201,7 @@
       wget
       curl
       lshw
-
+      whois
     ];
   programs.fish.enable = true;
 
