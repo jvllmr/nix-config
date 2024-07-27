@@ -71,9 +71,22 @@
 
 
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+
+
+  boot.loader = {
+    systemd-boot.enable = true;
+    kernelParams = [
+      "module_blacklist=i915" # intel video driver
+    ];
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = true;
+    };
+  };
+
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -136,8 +149,8 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  # intel
-  boot.kernelParams = [ "module_blacklist=i915" ];
+
+
 
 
   # Enable the KDE Plasma Desktop Environment.
