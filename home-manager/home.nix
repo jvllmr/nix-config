@@ -64,6 +64,7 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
+  programs.fish.enable = true;
   programs.git = {
     enable = true;
     diff-so-fancy.enable = true;

@@ -177,7 +177,7 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-  programs.fish.enable = true;
+
   programs.gnupg.agent.enable = true;
   programs.steam = {
     enable = true;
@@ -213,7 +213,7 @@
       wget
       curl
     ];
-
+  programs.fish.enable = true;
 
 
   networking.hostName = "janixos";
