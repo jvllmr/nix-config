@@ -12,6 +12,8 @@
     nodejs
     gcc
     gh # Github CLI
+    ansible
+    ansible-lint
   ];
 
 }
