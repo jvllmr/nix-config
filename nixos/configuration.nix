@@ -75,10 +75,10 @@
 
   boot = {
     kernelParams = [
-      # "module_blacklist=i915" # intel video driver
+
     ];
     loader = {
-      # systemd-boot.enable = true;
+
 
       efi.canTouchEfiVariables = true;
       grub = {
@@ -128,8 +128,8 @@
 
   hardware.nvidia = {
 
-    # Modesetting is required.
-    modesetting.enable = true;
+
+    modesetting.enable = false;
 
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
     # Enable this if you have graphical corruption issues or application crashes after waking
@@ -175,11 +175,6 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-  #qt = {
-  #  enable = true;
-  #  platformTheme = "gnome";
-  #  style = "adwaita-dark";
-  #};
 
   # Configure keymap in X11
   services.xserver = {
