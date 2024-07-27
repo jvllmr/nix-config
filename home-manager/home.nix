@@ -55,7 +55,7 @@
   home.packages = with pkgs; [
     vscode
     discord
-    steam
+
     spotify
     brave
     nextcloud-client
