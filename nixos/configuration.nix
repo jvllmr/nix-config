@@ -121,7 +121,21 @@
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
+    driSupport = lib.mkDefault true;
+    driSupport32Bit = lib.mkDefault true;
+    #---------------------------------------------------------------------
+    # Install additional packages that improve graphics performance and compatibility.
+    #---------------------------------------------------------------------
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      libvdpau-va-gl
+      nvidia-vaapi-driver
+      vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      vaapiVdpau
+      vulkan-validation-layers
+    ];
   };
+
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -130,12 +144,9 @@
 
 
     modesetting.enable = true;
+    nvidiaPersistenced = true;
 
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
-    # of just the bare essentials.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
@@ -167,7 +178,12 @@
 
   };
 
-
+  # Set environment variables related to NVIDIA graphics
+  environment.variables = {
+    GBM_BACKEND = "nvidia-drm";
+    LIBVA_DRIVER_NAME = "nvidia";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+  };
 
 
 
@@ -239,6 +255,14 @@
       wget
       curl
       lshw
+
+      # start nvidia packages
+      clinfo
+      gwe
+      virtualglLib
+      vulkan-loader
+      vulkan-tools
+      # end nvidia packages
     ];
   programs.fish.enable = true;
 
