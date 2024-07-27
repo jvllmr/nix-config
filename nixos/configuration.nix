@@ -73,17 +73,20 @@
 
 
 
-  boot.loader = {
-    systemd-boot.enable = true;
+  boot = {
     kernelParams = [
       "module_blacklist=i915" # intel video driver
     ];
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      devices = [ "nodev" ];
-      efiSupport = true;
-      useOSProber = true;
+    loader = {
+      systemd-boot.enable = true;
+
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        devices = [ "nodev" ];
+        efiSupport = true;
+        useOSProber = true;
+      };
     };
   };
 
