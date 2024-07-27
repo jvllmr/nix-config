@@ -78,7 +78,7 @@
       "module_blacklist=i915" # intel video driver
     ];
     loader = {
-      systemd-boot.enable = true;
+      # systemd-boot.enable = true;
 
       efi.canTouchEfiVariables = true;
       grub = {
