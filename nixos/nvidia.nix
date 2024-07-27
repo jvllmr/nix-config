@@ -4,6 +4,13 @@ let
 in
 {
   config = lib.mkIf hasNvidia {
+    # Set environment variables related to NVIDIA graphics
+    environment.variables = {
+      GBM_BACKEND = "nvidia-drm";
+      LIBVA_DRIVER_NAME = "nvidia";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    };
+
     boot = {
       kernelParams = [
         "module_blacklist=i915" # blacklist intel video driver
@@ -59,6 +66,17 @@ in
 
 
     };
+    # Load nvidia driver for Xorg and Wayland
+    services.xserver.videoDrivers = [ "nvidia" ];
+
+    environment.systemPackages = with pkgs; [
+
+      clinfo
+      gwe
+      virtualglLib
+      vulkan-loader
+      vulkan-tools
+    ];
 
   };
 

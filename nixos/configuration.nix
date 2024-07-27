@@ -19,6 +19,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
     ./nvidia.nix
+    ./devtools.nix
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
 
@@ -119,16 +120,10 @@
 
 
 
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "nvidia" ];
 
 
-  # Set environment variables related to NVIDIA graphics
-  environment.variables = {
-    GBM_BACKEND = "nvidia-drm";
-    LIBVA_DRIVER_NAME = "nvidia";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-  };
+
+
 
 
 
@@ -192,30 +187,20 @@
       home-manager
 
       sbctl
-      gh # Github CLI
+
       nixpkgs-fmt
       keepassxc
 
 
-      pre-commit
+
       fish
-      pdm
-      rustup
-      nodejs
-      gcc
+
       gnupg
       pinentry
       wget
       curl
       lshw
 
-      # start nvidia packages
-      clinfo
-      gwe
-      virtualglLib
-      vulkan-loader
-      vulkan-tools
-      # end nvidia packages
     ];
   programs.fish.enable = true;
 
