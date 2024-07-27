@@ -1,9 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{ inputs
-, outputs
-, lib
-, config
+{ outputs
 , pkgs
 , ...
 }: {
@@ -109,6 +106,7 @@
       redhat.ansible
       redhat.vscode-yaml
       charliermarsh.ruff
+      tamasfe.even-better-toml
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "vscode-theme-onedark";
