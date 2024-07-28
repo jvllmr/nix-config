@@ -202,6 +202,7 @@
       curl
       lshw
       whois
+      pdftk
     ];
   programs.fish.enable = true;
 
