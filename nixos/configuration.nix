@@ -195,7 +195,7 @@
 
 
       fish
-
+      libreoffice
       gnupg
       pinentry
       wget
