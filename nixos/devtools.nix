@@ -7,7 +7,7 @@
     python311Full
     python312Full
     pre-commit
-    pdm
+    pipx
     rustup
     nodejs
     gcc
@@ -15,5 +15,7 @@
     ansible
     ansible-lint
   ];
+
+
 
 }
