@@ -63,7 +63,15 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = "fish_add_path ~/.local/bin";
+
+  };
+
+
+
+
   programs.git = {
     enable = true;
     diff-so-fancy.enable = true;
