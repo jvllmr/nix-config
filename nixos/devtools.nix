@@ -10,6 +10,7 @@
     pipx
     rustup
     nodejs
+    corepack
     gcc
     gh # Github CLI
     ansible
