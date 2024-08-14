@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    minecraft
+    prismlauncher
     teamspeak_client
     (lutris.override {
       extraLibraries = pkgs: [
