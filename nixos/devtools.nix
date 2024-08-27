@@ -15,6 +15,7 @@
     gh # Github CLI
     ansible
     ansible-lint
+    pkg-config
   ];
 
 
