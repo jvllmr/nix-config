@@ -207,6 +207,7 @@
       lshw
       whois
       pdftk
+      kdePackages.kdeconnect-kde
     ];
   programs.fish.enable = true;
 
