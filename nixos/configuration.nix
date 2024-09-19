@@ -220,7 +220,7 @@
     jan = {
       isNormalUser = true;
       description = "Jan Vollmer";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
       packages = with pkgs; [
         kdePackages.kate
         thunderbird
