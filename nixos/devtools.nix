@@ -16,6 +16,10 @@
     ansible
     ansible-lint
     pkg-config
+    minikube
+    podman
+    podman-desktop
+    podman-compose
   ];
 
 
